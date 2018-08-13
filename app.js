@@ -26,7 +26,7 @@ let server = express();
 
 server.get('/',function(req,res){
     let myReadStream = fs.createReadStream(__dirname + '/readMe.txt', 'utf8');
-    myReadStream.pipe(res);
+    myReadStream.pipe(res);// => the res object in this line is the writable stream that will help the content to be displayed.
 });
 
 server.listen(3000,function(){
